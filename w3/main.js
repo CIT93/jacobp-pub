@@ -1,3 +1,15 @@
+function determineHouseSizePts(size) {
+    if(size === "Large") {
+    carbonFootprintpoints = carbonFootprintpoints + 10;
+    } else if (size === "Medium" ) {
+        carbonFootprintpoints = carbonFootprintpoints + 7;
+    } else if (size === "Small") {
+        carbonFootprintpoints = carbonFootprintpoints + 4;
+    } else if (size === "Apt") {
+        carbonFootprintpoints = carbonFootprintpoints + 2;
+    }
+}
+
 function determineHouseHoldPts(numberInHousehold) {
     console.log("Inside the function")
     if (numberInHousehold === 1) {
@@ -19,31 +31,12 @@ function determineHouseHoldPts(numberInHousehold) {
 }
 
 let carbonFootprintpoints = 0;
-//const numberInHousehold = 3;
+
 
 // global scope
 
-determineHouseHoldPts(3)
-determineHouseHoldPts(4)
-
-function dtrmHousesize(houseSize) {
-    console.log("Inside the function")
-if (houseSize === "Large House") {
-    housePoints = housePoints + 10;
-} else if (houseSize === "Medium-Sized House") {
-    housePoints = housePoints + 7;
-} else if (houseSize === "Small House") {
-    housePoints = housePoints + 4;
-} else if (houseSize === "Apartment") {
-    housePoints = housePoints + 2;
-}
-console.log(`Based on the size of the ${ houseSize}  the points would be ${ housePoints } `)
-}
-
-let housePoints = 0;
-
-dtrmHousesize("Large House")
-dtrmHousesize("Medium-Sized House")
+determineHouseHoldPts(5);
+determineHouseSizePts("Apt");
 
 
 
