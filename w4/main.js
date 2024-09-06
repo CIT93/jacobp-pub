@@ -48,7 +48,13 @@ function start(numberInHousehold, size) {
 }
 
 function displayOutput() {
-    
+    for (arr of cfpData){
+        console.log(arr) 
+        const output = document.getElementById("output");
+        const newP = document.createElement("p");
+        newP.textContent = `Your CFP total is ${arr [4]} because you have ${arr [0]} people living in your household and a ${arr [1]} size house. You score ${arr [3]} house size points, and ${arr [2]} house hold points`;
+        output.appendChild(newP)
+    }
 }
 
 start(5, "Apt");
