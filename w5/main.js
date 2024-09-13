@@ -37,7 +37,6 @@ function determineHouseHoldPts(numberInHousehold) {
     return houseHoldPoints;
 }
 
-
 console.log("global scope");
 
 function displayOutObj(obj) {
@@ -59,38 +58,33 @@ function start(numberInHousehold, size) {
     const houseHoldPTS = determineHouseHoldPts(numberInHousehold);
     const houseHoldPTTS = determineHouseSizePts(size);
     const total = houseHoldPTS + houseHoldPTTS;
-    
-cfpData.push({
-    houseMember: numberInHousehold,
-    houseSize: size,
-    houseMPTS: houseHoldPTS,
-    houseSPTS: houseHoldPTTS,
-    cfpTotal: total,
-});
+
+    cfpData.push({
+        houseMember: numberInHousehold,
+        houseSize: size,
+        houseMPTS: houseHoldPTS,
+        houseSPTS: houseHoldPTTS,
+        cfpTotal: total,
+    });
 
 }
 
 function displayOutput() {
     for (obj of cfpData) {
-    console.log(obj)
-    const output = document.getElementById("output");
-    const newH2 = document.createElement("h2");
-    newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
-                // const newH3 = document.createElement("h3");
-                // newH3.textContent = `Based on number in and size of home`
-                // const newP = document.createElement("p");
-                // newP.textContent = `This number is based on the number of people in the house of ${obj.houseMember} (score: ${obj.houseSPTS}),`;
-                // newP.textContent += ` and a ${obj.houseSize} size of home (score:${obj.houseMPTS}).`;
-                output.appendChild(newH2);
-                // output.appendChild(newH3);
-                // output.appendChild(newP);
-  }
+        console.log(obj)
+        const output = document.getElementById("output");
+        const newH2 = document.createElement("h2");
+        newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
+        const newH3 = document.createElement("h3");
+        newH3.textContent = `Based on number in and size of home`
+        const newP = document.createElement("p");
+        newP.textContent = `This number is based on the number of people in the house of ${obj.houseMember} (score: ${obj.houseSPTS}),`;
+        newP.textContent += ` and a ${obj.houseSize} size of home (score:${obj.houseMPTS}).`;
+        output.appendChild(newH2);
+        output.appendChild(newH3);
+        output.appendChild(newP);
+    }
 }
-
-
-
-
-
 
 start(5, "Apt");
 start(5, "small");
